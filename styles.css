@@ -2,7 +2,15 @@
   border: black solid 2px;
   padding: 10px;
 }
+table{
+  margin: 10px;
+  border: black solid 2px;
+  border-collapse: collapse;
 
-th{
-  padding: 10px;
+}
+
+
+th, td{
+  border: black solid 2px;
+  padding: 20px;
 }

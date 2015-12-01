@@ -41,16 +41,13 @@ $(document).ready(function(){
       for(i=0; i<arr.length; i++){
         var title = arr[i]['data']['title'];
         var name = arr[i]['data']['name'];
-        var img = "<img src=" +arr[i]['data']['header_img']+ "/>" ;
-        if(img === null){
-          img = '<img src ="https://placehold.it/100x100"/>';
-        };
-        $('#results').append("<tr><td>"+title+"</td><td>"+name+"</td><td>"+img+"</td></tr>");
+        var img = arr[i]['data']['header_img'] ? arr[i]['data']['header_img'] : "https://placehold.it/100x100"
+        $('#results').append("<tr><td>"+title+"</td><td>"+name+"</td><td><img style='width:40px; heigth:30px' src='"+img+"'/></td></tr>");
 
     };
 
 
-
+// http://c.thumbs.redditmedia.com/GXDZr1LSmQLtrRDn.jpg
 
 
   });
