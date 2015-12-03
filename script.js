@@ -21,16 +21,12 @@ $(document).ready(function(){
   var search_term = $("#user_search").val();
      //console.log(search_term);
 
+  
     var getter = $.ajax({
       url: "https://www.reddit.com/subreddits/search.json?q="+search_term,
       method: "GET",
       dataType: "json"
     });
-
-    // $('#trigger').click(function(){
-    //   	$('#tabl').append("<tr><td>Chris</td><td>"+age+"</td><td>Denver</td></tr>");
-    //     age++;
-    //   });
 
 
     getter.done(function(response){
