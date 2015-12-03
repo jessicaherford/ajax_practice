@@ -21,7 +21,7 @@ $(document).ready(function(){
   var search_term = $("#user_search").val();
      //console.log(search_term);
 
-  
+
     var getter = $.ajax({
       url: "https://www.reddit.com/subreddits/search.json?q="+search_term,
       method: "GET",
@@ -33,6 +33,12 @@ $(document).ready(function(){
       console.log(response);
       // console.log(response['data']['children']);
       var arr = response['data']['children'];
+      $('#exclude').click(function(){
+      var exclude_term = $("#user_search_exclude").val();
+      console.log(exclude_term);
+      $('tr:contains("'+exclude_term+'")').remove();
+      });
+
       console.log(arr.length);
       for(i=0; i<arr.length; i++){
         var title = arr[i]['data']['title'];
